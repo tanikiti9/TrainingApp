@@ -1,11 +1,10 @@
 import AuthGuard from '@/components/Auth/AuthGuard'
+import MyPage from '@/components/Mypage/MyPage'
 import React from 'react'
 
 const page = () => {
     return (
-        <AuthGuard>
-            <div>page</div>
-        </AuthGuard>
+        <div><MyPage /></div>
     )
 }
 

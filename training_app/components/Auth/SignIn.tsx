@@ -42,7 +42,7 @@ const SignIn = () => {
                 <Typography variant="h5" gutterBottom>
                     ログイン
                 </Typography>
-                <TextField variant="outlined" margin="normal" value={email} onChange={(e) => setEmail(e.target.value)} fullWidth label="ユーザー名" />
+                <TextField variant="outlined" margin="normal" value={email} onChange={(e) => setEmail(e.target.value)} fullWidth label="メールアドレス" />
                 <TextField variant="outlined" margin="normal" value={password} onChange={(e) => setPassword(e.target.value)} fullWidth label="パスワード" type="password" />
                 <Button variant="contained" color="primary" onClick={handleSend} fullWidth>
                     ログイン

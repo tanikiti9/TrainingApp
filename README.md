@@ -6,3 +6,5 @@ npm install
 
 npm run dev
 で正常に起動できているか確認
+
+npm install @mui/material-nextjs @emotion/cache
