@@ -1,3 +1,27 @@
+## 重要
+今回からPull Requestを使っていきたいので、mainにマージする前にPRしてください
+
+下記gitコマンドの流れです
+
+### Gitコマンドの流れ（例：feature/my-page機能を作るまで）
+1. git checkout main（mainに移動）
+2. git pull origin main（mainを最新状態にする）
+3. git checkout -b feature/my-page（ブランチを新規作成）
+作業完了
+4. git status（ブランチの状態を確認）
+5. git add .（すべてのファイルを追加） 
+5. git commit -m "commit memo"（コミット）
+6. git push origin feature/my-page（プッシュ）
+7. PRを作成、レビュー、マージ（相手にPRを作成したことを報告、レビューとマージしてもらう）
+8. git checkout main（PRでmainにマージ済みなのでmainに移動）
+9. git pull origin main（mainを最新状態にする）
+10. git branch -d feature/my-page（ローカルでブランチの削除）
+11. git push origin --delete feature/my-page（ブランチ削除を同期）
+
+### 補足
+- PRですが、mainを自身のブランチにマージしてコンフリクトが起きた場合だけPRを作成するという方法も視野です。（すべてのマージをPRすると確認が大変なので）
+- 今回は同じ機能を2人で作成しているのでPRを作成してレビューしてマージの流れにします。
+
 ## データ構造
 
 データ構造は `interface.ts` を参照。
