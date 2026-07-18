@@ -1,16 +1,39 @@
-git clone https://github.com/tanikiti9/TrainingApp
+マイルーティン機能概要
 
-で自分のローカルにクローンする
-cd training_app
-npm install
+データ構造はinterface.tsを参照
+interface.tsのRoutineにRoutineName: string、共通の休憩時間の設定、SetDetailに個別の休憩時間の設定をする。
 
-npm run dev
-で正常に起動できているか確認
+マイルーティンは
+app/page.tsxに大まかな配置をして（横並びで大丈夫）
+ルーティンの名前、共通休憩時間、トレーニングの内容を並べ、個々のトレーニングの休憩時間と詳細を編集できるようにする
+これらはコンソール上に出すだけでも大丈夫で、それぞれの動きがあった後にconsole.logで表示することで見やすくなる（発火条件のボタンは画面に表示するといい）# マイルーティン機能概要
 
-muiのページに移動してinstallationからインストール、
-firebaseは
-npm install firebase
-でインストール
-追加で
-npm install @mui/material-nextjs @emotion/cache
-firebase関連などで分からないことがあったら、READMEに残すかチャットしてください（チャットは遷移が激しく見づらいのでREADMEに編集推奨）
+## データ構造
+
+データ構造は `interface.ts` を参照。
+
+### 変更点
+
+- `Routine` に以下を追加
+  - `routineName: string` ─ ルーティンの名前
+  - `restTime: number` ─ 共通の休憩時間（秒）
+- `SetDetail` に以下を追加
+  - `restTime?: number` ─ 個別の休憩時間（秒）。未設定時は共通の休憩時間を使う
+
+## 画面配置
+
+- `app/page.tsx` に大まかな配置を行う（横並びでOK）
+- 表示する要素
+  1. ルーティンの名前
+  2. 共通の休憩時間
+  3. トレーニングの内容一覧
+
+## 編集機能
+
+- 各トレーニングごとに、個別の休憩時間と詳細を編集できるようにする
+
+## 動作確認方法
+
+- 現時点ではUI表示は最小限でよく、**動作確認はコンソール出力で行う**
+- 各操作（編集・保存など）が発火した後、`console.log` で結果を表示する
+- 発火条件となるボタンは、画面上に表示する
